@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function(){
+                const btns = document.querySelectorAll('button')
+
+                btns.forEach((btn) => btn.addEventListener('click', (event) => {
+                    const status = document.querySelector('#status-1')
+                    btn.style.color = 'white';
+                    if (event.target.classList.contains('correct')) {
+                        btn.style.background = 'green';
+                        status.innerHTML = 'CORRECT! :D'
+                    } else {
+                        btn.style.background = 'red';
+                        status.innerHTML = 'Incorrect... :('
+                    }
+                }))
+
+                document.querySelector('form').addEventListener('submit', (e)=>{
+                    e.preventDefault()
+                    const input = e.target.querySelector('input')
+                    const inputValue = document.querySelector('#color').value;
+                    const feedback2 = document.querySelector('#status-2');
+                    if (inputValue.toLowerCase() === "crimson") {
+                        feedback2.innerHTML = 'CORRECT! :D';
+                        input.style.background = 'green'
+                    } else {
+                        feedback2.innerHTML = 'Incorrect... :(';
+                        input.style.background = 'red'
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>In which year did the CS50 course first appeared on-campus?</h3>
+                <p id="status-1"></p>
+                <button class="choice">1969</button>
+                <button class="choice">1979</button>
+                <button class="correct choice">1989</button>
+                <button class="choice">1999</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Write down the specific name of red which represents Harvard University.</h3>
+                <form>
+                    <input type="text" autofocus placeholder="your answer" id="color">
+                    <button type="submit">Submit</button>
+                </form>
+                <p id="status-2"></p>
+            </div>
+        </div>
+    </body>
+</html>

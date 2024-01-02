@@ -1,0 +1,12 @@
+ 1. by using following query:
+    SELECT AVG(danceability), AVG(energy), AVG(valence) FROM songs;
+    we got
+    +-------------------+-------------+--------------+
+    | AVG(danceability) | AVG(energy) | AVG(valence) |
+    +-------------------+-------------+--------------+
+    | 0.71646           | 0.65906     | 0.484443     |
+    +-------------------+-------------+--------------+
+
+    I will describe it as modest good and face the reality.
+
+2. Suppose loudness & speechiness need to be counted as well.

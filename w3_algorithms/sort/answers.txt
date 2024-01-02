@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: the performances are way more slow than the other two, but when it dealt with sorted data, it was quick!
+
+sort2 uses: merge sort
+
+How do you know?: the performances are the best
+
+sort3 uses: selection sort
+
+How do you know?: the performance is consistent
